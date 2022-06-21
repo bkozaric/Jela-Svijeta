@@ -17,6 +17,7 @@ class Meal extends Model implements TranslatableContract
     
     public $translatedAttributes = ['title', 'description'];
 
+    
     public function category()
     {
         return $this->belongsTo('App\Category');
@@ -32,7 +33,6 @@ class Meal extends Model implements TranslatableContract
         return $this->belongsToMany('App\Tag');
     }
 
-    
 }
 
 

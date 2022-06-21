@@ -20,15 +20,11 @@ class MealFactory extends Factory
     public function definition()
     {
 
+ 
         $categories = Category::all();
 	    $category = $categories->random(rand(0, 5))->first();
 
-        /*$tags = Tag::all();
-        $tag = $categories->random(rand(0, 5))->first();
-
-        $ingredients = Ingredient::all();
-        $ingredient = $categories->random(rand(0, 5))->first();*/
-
+    
         return [
             
             'en' =>  [
@@ -43,7 +39,7 @@ class MealFactory extends Factory
                 'title' => $this->faker->word(),
                 'description' => $this->faker->sentence(10),
             ],
-            'category_id' => $category->id,
+            'category_id' => $category ? $category->id : $category
         ];
     }
 }

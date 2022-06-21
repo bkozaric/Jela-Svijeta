@@ -7,6 +7,8 @@ use App\Models\Meal;
 use App\Models\Category;
 use App\Models\Language;
 use App\Models\Ingredient;
+use App\Models\MealIngredient;
+use App\Models\MealTag;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -27,5 +29,7 @@ class DatabaseSeeder extends Seeder
         Ingredient::factory(5)->create();
         Category::factory(5)->create();
         Meal::factory(5)->create();
+        MealIngredient::factory(20)->create();
+        MealTag::factory(10)->create();
     }
 }
