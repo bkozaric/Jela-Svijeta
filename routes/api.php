@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/meals', [MealController::class, 'index']);
+Route::get('/meals', [MealController::class, 'query']);
