@@ -13,20 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('meals', function (Blueprint $table) {
+        Schema::create('meal_tags', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->softDeletes();
+            
+            $table->integer('tag_id')->unsigned();
+            $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
 
-            
-            $table->integer('category_id')->unsigned()->nullable();
-                    
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-            
-            // $table->string('slug')->unique()->after('title');
+            $table->integer('meal_id')->unsigned();
+            $table->foreign('meal_id')->references('id')->on('meals')->onDelete('cascade');
         });
-
-
     }
 
     /**
@@ -36,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('meals');
+        Schema::dropIfExists('meal_tags');
     }
 };

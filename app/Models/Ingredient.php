@@ -15,6 +15,11 @@ class Ingredient extends Model
     protected $fillable = ['slug'];
     
     public $translatedAttributes = ['title'];
+
+    public function meals()
+    {
+    	return $this->belongsToMany('App\Meal');
+    }
 }
 
 class IngredientTranslation extends Model

@@ -15,6 +15,11 @@ class Tag extends Model
     protected $fillable = ['slug'];
     
     public $translatedAttributes = ['title'];
+
+    public function meals()
+    {
+    	return $this->belongsToMany('App\Meal');
+    }
 }
 
 class TagTranslation extends Model
