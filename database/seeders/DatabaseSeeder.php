@@ -2,7 +2,11 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Tag;
+use App\Models\Meal;
+use App\Models\Category;
+use App\Models\Language;
+use App\Models\Ingredient;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,9 +18,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        Language::create(['name' => 'en']);
+        Language::create(['name' => 'fr']);
+        Language::create(['name' => 'de']);
 
-        \App\Models\Meal::factory(10)->create();
-
-
+       
+        Tag::factory(5)->create();
+        Ingredient::factory(5)->create();
+        Category::factory(5)->create();
+        Meal::factory(5)->create();
     }
 }

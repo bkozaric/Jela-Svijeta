@@ -17,6 +17,14 @@ return new class extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->softDeletes();
+
+            $table->integer('ingredient_id')->unsigned();
+            $table->integer('category_id')->unsigned()->nullable();
+            $table->integer('tag_id')->unsigned();
+
+            $table->foreign('ingredient_id')->references('id')->on('ingredients')->onDelete('cascade');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
             // $table->string('slug')->unique()->after('title');
         });
 

@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Language;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,16 @@ class TagFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'en' =>  [
+                'title' => $this->faker->word(),
+            ],
+            'fr' =>  [
+                'title' => $this->faker->word(),
+            ],
+            'de' =>  [
+                'title' => $this->faker->word(),
+            ],
+            'slug' => $this->faker->uuid(),
         ];
     }
 }

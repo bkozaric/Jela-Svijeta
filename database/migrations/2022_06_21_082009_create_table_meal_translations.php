@@ -25,6 +25,8 @@ return new class extends Migration
 
             $table->unique(['meal_id', 'locale']);
             $table->foreign('meal_id')->references('id')->on('meals')->onDelete('cascade');
+
+
         });
 
         /* Schema::create('post_translations', function(Blueprint $table) {
@@ -46,6 +48,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('meals_translations');
+        Schema::dropIfExists('meal_translations');
     }
 };

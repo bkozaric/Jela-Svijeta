@@ -17,7 +17,16 @@ class IngredientFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'en' =>  [
+                'title' => $this->faker->word(),
+            ],
+            'fr' =>  [
+                'title' => $this->faker->word(),
+            ],
+            'de' =>  [
+                'title' => $this->faker->word(),
+            ],
+            'slug' => $this->faker->uuid(),
         ];
     }
 }
